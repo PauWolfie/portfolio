@@ -24,5 +24,5 @@ import { FooterComponent } from './components/footer/footer';
   styleUrls: ['./app.scss'],
 })
 export class App {
-  protected readonly title = signal('Pau Llinàs - Portfolio');
+  protected readonly title = signal('Pau Llobet - Portfolio');
 }

@@ -1,5 +1,6 @@
 <button
   class="theme-toggle"
+  [class.theme-toggle--dark]="themeService.resolvedTheme() === 'dark'"
   (click)="toggleTheme()"
   [attr.aria-label]="themeService.resolvedTheme() === 'dark' ? 'Canviar a mode clar' : 'Canviar a mode fosc'"
   type="button"

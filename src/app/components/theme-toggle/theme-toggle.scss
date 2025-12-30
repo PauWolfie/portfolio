@@ -36,18 +36,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
-    // Move thumb to right in dark mode
-    [data-theme='dark'] &,
-    :root:not([data-theme='light']) & {
-      @media (prefers-color-scheme: dark) {
-        transform: translateX(26px);
-      }
-    }
-
-    [data-theme='dark'] & {
-      transform: translateX(26px);
-    }
   }
 
   &__icon {
@@ -66,52 +54,33 @@
       opacity: 0;
       transform: rotate(-90deg);
     }
+  }
 
-    // Dark mode icon states
-    [data-theme='dark'] &--sun,
-    :root:not([data-theme='light']) &--sun {
-      @media (prefers-color-scheme: dark) {
-        opacity: 0;
-        transform: rotate(90deg);
+  // ============================================
+  // DARK MODE STATE (via Angular class binding)
+  // ============================================
+  
+  &--dark {
+    .theme-toggle__track {
+      background-color: var(--color-accent-light);
+
+      &:hover {
+        background-color: var(--color-accent);
       }
     }
 
-    [data-theme='dark'] &--sun {
+    .theme-toggle__thumb {
+      transform: translateX(26px);
+    }
+
+    .theme-toggle__icon--sun {
       opacity: 0;
       transform: rotate(90deg);
     }
 
-    [data-theme='dark'] &--moon,
-    :root:not([data-theme='light']) &--moon {
-      @media (prefers-color-scheme: dark) {
-        opacity: 1;
-        transform: rotate(0deg);
-      }
-    }
-
-    [data-theme='dark'] &--moon {
+    .theme-toggle__icon--moon {
       opacity: 1;
       transform: rotate(0deg);
     }
-  }
-}
-
-// Track color in dark mode
-[data-theme='dark'] .theme-toggle__track,
-:root:not([data-theme='light']) .theme-toggle__track {
-  @media (prefers-color-scheme: dark) {
-    background-color: var(--color-accent-light);
-
-    &:hover {
-      background-color: var(--color-accent);
-    }
-  }
-}
-
-[data-theme='dark'] .theme-toggle__track {
-  background-color: var(--color-accent-light);
-
-  &:hover {
-    background-color: var(--color-accent);
   }
 }
