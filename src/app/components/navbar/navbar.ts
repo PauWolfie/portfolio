@@ -1,4 +1,5 @@
 import { Component, signal, HostListener } from '@angular/core';
+import { ThemeToggleComponent } from '../theme-toggle/theme-toggle';
 
 /**
  * Navbar Component
@@ -8,6 +9,7 @@ import { Component, signal, HostListener } from '@angular/core';
 @Component({
   selector: 'app-navbar',
   standalone: true,
+  imports: [ThemeToggleComponent],
   templateUrl: './navbar.html',
   styleUrls: ['./navbar.scss'],
 })

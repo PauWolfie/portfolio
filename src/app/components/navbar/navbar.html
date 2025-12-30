@@ -14,15 +14,20 @@
       }
     </ul>
 
-    <!-- Mobile Menu Button -->
-    <button
-      class="navbar__mobile-toggle"
-      (click)="toggleMobileMenu()"
-      [attr.aria-expanded]="isMobileMenuOpen()"
-      aria-label="Toggle menu"
-    >
-      <span class="navbar__hamburger" [class.navbar__hamburger--open]="isMobileMenuOpen()"></span>
-    </button>
+    <!-- Desktop Actions (Theme Toggle) -->
+    <div class="navbar__actions">
+      <app-theme-toggle />
+
+      <!-- Mobile Menu Button -->
+      <button
+        class="navbar__mobile-toggle"
+        (click)="toggleMobileMenu()"
+        [attr.aria-expanded]="isMobileMenuOpen()"
+        aria-label="Toggle menu"
+      >
+        <span class="navbar__hamburger" [class.navbar__hamburger--open]="isMobileMenuOpen()"></span>
+      </button>
+    </div>
 
     <!-- Mobile Navigation -->
     @if (isMobileMenuOpen()) {
@@ -36,6 +41,11 @@
             </li>
           }
         </ul>
+        <!-- Theme toggle in mobile menu -->
+        <div class="navbar__mobile-theme">
+          <span class="navbar__mobile-theme-label">Tema</span>
+          <app-theme-toggle />
+        </div>
       </div>
     }
   </nav>
