@@ -1,0 +1,70 @@
+// Tech Section Styles
+
+.tech {
+  overflow: hidden;
+
+  &__container {
+    text-align: center;
+  }
+
+  &__eyebrow {
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-4);
+  }
+
+  &__title {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-4);
+
+    @media (min-width: 768px) {
+      font-size: var(--font-size-5xl);
+    }
+  }
+
+  &__subtitle {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-12);
+    max-width: 500px;
+    margin-inline: auto;
+  }
+
+  // Marquee Animation
+  &__marquee {
+    width: 100%;
+    overflow: hidden;
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 10%,
+      black 90%,
+      transparent
+    );
+  }
+
+  &__marquee-track {
+    display: flex;
+    gap: var(--space-6);
+    animation: marquee 30s linear infinite;
+    width: fit-content;
+
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+
+  &__item {
+    flex-shrink: 0;
+    min-width: 120px;
+    min-height: 80px;
+    padding: var(--space-4) var(--space-6);
+    font-weight: 500;
+    font-size: var(--font-size-sm);
+  }
+}

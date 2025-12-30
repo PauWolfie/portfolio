@@ -1,0 +1,24 @@
+<section class="tech section section--alt">
+  <div class="tech__container container">
+    <p class="tech__eyebrow">H2: Secció Tecnologies</p>
+    <h2 class="tech__title">Tecnologies</h2>
+    <p class="tech__subtitle">Les eines que utilitzo per crear experiències digitals</p>
+
+    <!-- Marquee Container -->
+    <div class="tech__marquee">
+      <div class="tech__marquee-track">
+        @for (tech of technologies; track tech) {
+          <div class="tech__item wireframe">
+            <span>{{ tech }}</span>
+          </div>
+        }
+        <!-- Duplicate for seamless loop -->
+        @for (tech of technologies; track tech) {
+          <div class="tech__item wireframe">
+            <span>{{ tech }}</span>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

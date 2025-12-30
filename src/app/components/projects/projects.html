@@ -1,0 +1,22 @@
+<section class="projects section">
+  <div class="projects__container container">
+    <p class="projects__eyebrow">H2: Secció Projectes</p>
+    <h2 class="projects__title">Projectes</h2>
+    <p class="projects__subtitle">Una selecció dels meus treballs recents</p>
+
+    <div class="projects__grid">
+      @for (project of projects; track project.id) {
+        <article class="projects__card wireframe">
+          <div class="projects__card-image">
+            <span>[Imatge]</span>
+          </div>
+          <div class="projects__card-content">
+            <span class="projects__card-category">{{ project.category }}</span>
+            <h3 class="projects__card-title">{{ project.title }}</h3>
+            <p class="projects__card-description">[Descripció breu del projecte]</p>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

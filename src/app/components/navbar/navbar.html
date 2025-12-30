@@ -1,0 +1,42 @@
+<header class="navbar" [class.navbar--scrolled]="isScrolled()">
+  <nav class="navbar__container container">
+    <!-- Logo -->
+    <a href="#inici" class="navbar__logo">
+      <span class="navbar__logo-text">PL</span>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <ul class="navbar__links">
+      @for (link of navLinks; track link.href) {
+        <li>
+          <a [href]="link.href" class="navbar__link">{{ link.label }}</a>
+        </li>
+      }
+    </ul>
+
+    <!-- Mobile Menu Button -->
+    <button
+      class="navbar__mobile-toggle"
+      (click)="toggleMobileMenu()"
+      [attr.aria-expanded]="isMobileMenuOpen()"
+      aria-label="Toggle menu"
+    >
+      <span class="navbar__hamburger" [class.navbar__hamburger--open]="isMobileMenuOpen()"></span>
+    </button>
+
+    <!-- Mobile Navigation -->
+    @if (isMobileMenuOpen()) {
+      <div class="navbar__mobile-menu">
+        <ul class="navbar__mobile-links">
+          @for (link of navLinks; track link.href) {
+            <li>
+              <a [href]="link.href" class="navbar__mobile-link" (click)="closeMobileMenu()">
+                {{ link.label }}
+              </a>
+            </li>
+          }
+        </ul>
+      </div>
+    }
+  </nav>
+</header>

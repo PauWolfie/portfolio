@@ -1,0 +1,21 @@
+<section class="experience section section--alt">
+  <div class="experience__container container">
+    <p class="experience__eyebrow">H2: Secció Experiència</p>
+    <h2 class="experience__title">Experiència</h2>
+    <p class="experience__subtitle">El meu recorregut professional</p>
+
+    <div class="experience__timeline">
+      @for (exp of experiences; track exp.id) {
+        <article class="experience__item">
+          <div class="experience__marker"></div>
+          <div class="experience__content wireframe">
+            <span class="experience__period">{{ exp.period }}</span>
+            <h3 class="experience__role">{{ exp.role }}</h3>
+            <p class="experience__company">{{ exp.company }}</p>
+            <p class="experience__description">{{ exp.description }}</p>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

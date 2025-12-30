@@ -1,0 +1,136 @@
+// Experience Section Styles
+
+.experience {
+  &__container {
+    max-width: 800px;
+    text-align: center;
+  }
+
+  &__eyebrow {
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-4);
+  }
+
+  &__title {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-4);
+
+    @media (min-width: 768px) {
+      font-size: var(--font-size-5xl);
+    }
+  }
+
+  &__subtitle {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-12);
+  }
+
+  // Timeline
+  &__timeline {
+    position: relative;
+    text-align: left;
+
+    // Vertical line
+    &::before {
+      content: '';
+      position: absolute;
+      left: 7px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background-color: var(--color-border);
+
+      @media (min-width: 768px) {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  &__item {
+    position: relative;
+    padding-left: var(--space-12);
+    padding-bottom: var(--space-8);
+
+    @media (min-width: 768px) {
+      padding-left: 0;
+      padding-right: 0;
+      width: 50%;
+      margin-left: auto;
+      padding-left: var(--space-12);
+
+      &:nth-child(even) {
+        margin-left: 0;
+        margin-right: auto;
+        padding-left: 0;
+        padding-right: var(--space-12);
+        text-align: right;
+
+        .experience__marker {
+          left: auto;
+          right: -8px;
+        }
+      }
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  &__marker {
+    position: absolute;
+    left: 0;
+    top: 4px;
+    width: 16px;
+    height: 16px;
+    background-color: var(--color-accent);
+    border-radius: 50%;
+    border: 3px solid var(--color-bg-alt);
+
+    @media (min-width: 768px) {
+      left: -8px;
+    }
+  }
+
+  &__content {
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: auto;
+    padding: var(--space-6);
+  }
+
+  &__period {
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--space-2);
+  }
+
+  &__role {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    margin-bottom: var(--space-1);
+  }
+
+  &__company {
+    font-size: var(--font-size-base);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-3);
+  }
+
+  &__description {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
+}

@@ -1,0 +1,102 @@
+// Contact Section Styles
+
+.contact {
+  &__container {
+    max-width: 600px;
+    text-align: center;
+  }
+
+  &__eyebrow {
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-4);
+  }
+
+  &__title {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-4);
+
+    @media (min-width: 768px) {
+      font-size: var(--font-size-5xl);
+    }
+  }
+
+  &__subtitle {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-12);
+  }
+
+  &__form {
+    flex-direction: column;
+    gap: var(--space-6);
+    padding: var(--space-8);
+    text-align: left;
+  }
+
+  &__form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  &__label {
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    color: var(--color-text);
+  }
+
+  &__input,
+  &__textarea {
+    width: 100%;
+    padding: var(--space-4);
+    font-family: inherit;
+    font-size: var(--font-size-base);
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-md);
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+
+    &::placeholder {
+      color: var(--color-text-muted);
+    }
+
+    &:focus {
+      outline: none;
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+    }
+  }
+
+  &__textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  &__submit {
+    width: 100%;
+    padding: var(--space-4) var(--space-8);
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    color: white;
+    background-color: var(--color-accent);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-base);
+
+    &:hover {
+      background-color: var(--color-accent-hover);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}

@@ -1,0 +1,32 @@
+<footer class="footer">
+  <div class="footer__container container">
+    <div class="footer__content">
+      <!-- Logo / Brand -->
+      <div class="footer__brand">
+        <span class="footer__logo">PL</span>
+        <p class="footer__tagline">[Tagline / Eslògan]</p>
+      </div>
+
+      <!-- Social Links -->
+      <nav class="footer__social">
+        @for (link of socialLinks; track link.name) {
+          <a
+            [href]="link.href"
+            class="footer__social-link"
+            [attr.aria-label]="link.name"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            [{{ link.icon }}]
+          </a>
+        }
+      </nav>
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copyright">
+        © {{ currentYear }} Pau Llinàs. Tots els drets reservats.
+      </p>
+    </div>
+  </div>
+</footer>
