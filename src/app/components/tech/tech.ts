@@ -82,10 +82,22 @@ export class TechComponent {
     },
   ];
 
-  // For the marquee animation
+  // For the marquee animation - using Devicon classes
   protected readonly marqueeItems = [
-    'Angular', 'TypeScript', 'Java', 'Spring Boot', 'Docker',
-    'GCP', 'Firebase', 'RxJS', 'SCSS', 'Git',
+    { name: 'Angular', icon: 'devicon-angular-plain' },
+    { name: 'TypeScript', icon: 'devicon-typescript-plain' },
+    { name: 'JavaScript', icon: 'devicon-javascript-plain' },
+    { name: 'Java', icon: 'devicon-java-plain' },
+    { name: 'Spring', icon: 'devicon-spring-original' },
+    { name: 'C#', icon: 'devicon-csharp-plain' },
+    { name: 'Docker', icon: 'devicon-docker-plain' },
+    { name: 'GCP', icon: 'devicon-googlecloud-plain' },
+    { name: 'Firebase', icon: 'devicon-firebase-plain' },
+    { name: 'Git', icon: 'devicon-git-plain' },
+    { name: 'SASS', icon: 'devicon-sass-original' },
+    { name: 'HTML5', icon: 'devicon-html5-plain' },
+    { name: 'CSS3', icon: 'devicon-css3-plain' },
+    { name: 'RxJS', icon: 'devicon-rxjs-plain' },
   ];
 
   ngAfterViewInit() {

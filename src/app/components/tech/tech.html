@@ -44,15 +44,15 @@
     <!-- Marquee Container -->
     <div class="tech__marquee">
       <div class="tech__marquee-track">
-        @for (tech of marqueeItems; track tech) {
+        @for (tech of marqueeItems; track tech.name) {
           <div class="tech__item">
-            <span>{{ tech }}</span>
+            <i [class]="tech.icon"></i>
           </div>
         }
         <!-- Duplicate for seamless loop -->
-        @for (tech of marqueeItems; track tech) {
+        @for (tech of marqueeItems; track tech.name; let i = $index) {
           <div class="tech__item">
-            <span>{{ tech }}</span>
+            <i [class]="tech.icon"></i>
           </div>
         }
       </div>
