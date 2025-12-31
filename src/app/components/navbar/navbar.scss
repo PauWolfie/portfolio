@@ -40,7 +40,9 @@
     height: 40px;
     border-radius: 50%;
     object-fit: cover;
-    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    background-color: var(--color-bg);
+    padding: 2px;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-theme);
 
     &:hover {
       transform: scale(1.05);
