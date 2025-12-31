@@ -1,19 +1,57 @@
-<section class="tech section section--alt">
+<section class="tech section section--alt" id="tecnologies">
   <div class="tech__container container">
     <h2 class="tech__title">Tecnologies</h2>
     <p class="tech__subtitle">Les eines que utilitzo per crear experiències digitals</p>
 
+    <!-- Categories Grid -->
+    <div class="tech__categories">
+      @for (category of categories; track category.title) {
+        <div class="tech__category">
+          <div class="tech__category-header">
+            <i [attr.data-lucide]="category.icon" class="tech__category-icon"></i>
+            <h3 class="tech__category-title">{{ category.title }}</h3>
+          </div>
+          <div class="tech__category-content">
+            @for (item of category.items; track item.label) {
+              <div class="tech__subcategory">
+                <span class="tech__subcategory-label">{{ item.label }}</span>
+                <span class="tech__subcategory-techs">
+                  @for (tech of item.techs; track tech; let last = $last) {
+                    {{ tech }}@if (!last) {, }
+                  }
+                </span>
+              </div>
+            }
+          </div>
+        </div>
+      }
+    </div>
+
+    <!-- Strengths Section -->
+    <div class="tech__strengths">
+      <h3 class="tech__strengths-title">Punts Forts</h3>
+      <div class="tech__strengths-grid">
+        @for (strength of strengths; track strength.title) {
+          <div class="tech__strength">
+            <i [attr.data-lucide]="strength.icon" class="tech__strength-icon"></i>
+            <h4 class="tech__strength-title">{{ strength.title }}</h4>
+            <p class="tech__strength-desc">{{ strength.description }}</p>
+          </div>
+        }
+      </div>
+    </div>
+
     <!-- Marquee Container -->
     <div class="tech__marquee">
       <div class="tech__marquee-track">
-        @for (tech of technologies; track tech) {
-          <div class="tech__item wireframe">
+        @for (tech of marqueeItems; track tech) {
+          <div class="tech__item">
             <span>{{ tech }}</span>
           </div>
         }
         <!-- Duplicate for seamless loop -->
-        @for (tech of technologies; track tech) {
-          <div class="tech__item wireframe">
+        @for (tech of marqueeItems; track tech) {
+          <div class="tech__item">
             <span>{{ tech }}</span>
           </div>
         }
