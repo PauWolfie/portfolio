@@ -15,24 +15,24 @@ export class ExperienceComponent {
   protected readonly experiences = [
     {
       id: 1,
-      role: '[Rol 1]',
-      company: '[Empresa 1]',
-      period: '2023 - Present',
-      description: '[Descripció de les tasques i responsabilitats]',
+      role: 'Enginyer I+D',
+      company: 'Mychef',
+      period: 'oct. 2023 - Actualitat',
+      description: 'Desplegament i desenvolupament de Mychef Cloud. Disseny i implementació de diverses aplicacións de gestió interna.',
     },
     {
       id: 2,
-      role: '[Rol 2]',
-      company: '[Empresa 2]',
-      period: '2021 - 2023',
-      description: '[Descripció de les tasques i responsabilitats]',
+      role: 'Full Stack Developer',
+      company: 'Mychef',
+      period: 'ene. 2023 - oct. 2023',
+      description: 'Creació de la plataforma cloud per la conexió dels diferents dispositius de Mychef.',
     },
     {
       id: 3,
-      role: '[Rol 3]',
-      company: '[Empresa 3]',
-      period: '2019 - 2021',
-      description: '[Descripció de les tasques i responsabilitats]',
+      role: 'Frontend Developer',
+      company: 'Mychef',
+      period: 'ago. 2022 - ene.2023',
+      description: 'Programador en pràctiques. Creació d\'un sistema per al control de versions documental automàtic basat en aprovacions.',
     },
   ];
 }
