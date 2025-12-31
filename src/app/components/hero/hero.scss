@@ -57,6 +57,29 @@
     max-width: 600px;
   }
 
+  &__typewriter {
+    min-height: 3.4em; // Reserve space for 2 lines to prevent layout shift
+    display: flex;
+    align-items: flex-start;
+  }
+
+  &__typewriter-text {
+    display: inline;
+  }
+
+  &__cursor {
+    display: inline-block;
+    color: var(--color-accent);
+    font-weight: 300;
+    opacity: 0;
+    transition: opacity 0.1s ease;
+    margin-left: 2px;
+
+    &--visible {
+      opacity: 1;
+    }
+  }
+
   &__cta {
     display: flex;
     flex-wrap: wrap;

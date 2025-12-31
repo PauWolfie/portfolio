@@ -8,7 +8,9 @@
         <span class="text-accent">Pau Llobet</span>
       </h1>
       <p class="hero__subtitle">Enginyer Software</p>
-      <p class="hero__description">[Breu descripció personal i objectius professionals]</p>
+      <p class="hero__description hero__typewriter">
+        <span class="hero__typewriter-text">{{ displayedText() }}</span><span class="hero__cursor" [class.hero__cursor--visible]="showCursor()">|</span>
+      </p>
       <div class="hero__cta">
         <a href="#contacte" class="hero__button hero__button--primary">Contacte</a>
         <a href="#projectes" class="hero__button hero__button--secondary">Veure projectes</a>
