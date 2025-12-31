@@ -1,7 +1,6 @@
 <section class="hero section">
   <!-- Dynamic interactive background -->
-  <canvas #heroCanvas class="hero__canvas"></canvas>
-  <div class="hero__gradient-overlay"></div>
+  <app-particle-background [particleCount]="80" [connectionDistance]="120" [mouseRadius]="150"></app-particle-background>
   
   <div class="hero__container container">
     <div class="hero__content">

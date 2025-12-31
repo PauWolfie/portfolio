@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
+import { ParticleBackgroundComponent } from '../particle-background/particle-background';
 
 /**
  * Projects Component
- * Project showcase section with grid cards
- * Placeholder mode - wireframe visualization
+ * Project showcase section with grid cards and particle background
  */
 @Component({
   selector: 'app-projects',
   standalone: true,
+  imports: [ParticleBackgroundComponent],
   templateUrl: './projects.html',
   styleUrls: ['./projects.scss'],
 })

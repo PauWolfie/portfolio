@@ -1,8 +1,13 @@
 // Projects Section Styles
 
 .projects {
+  position: relative;
+  overflow: hidden;
+
   &__container {
     text-align: center;
+    position: relative;
+    z-index: 2;
   }
 
   &__eyebrow {
@@ -54,6 +59,9 @@
     overflow: hidden;
     min-height: auto;
     transition: transform var(--transition-base), box-shadow var(--transition-base);
+    position: relative;
+    z-index: 3;
+    background-color: var(--color-surface);
 
     &:hover {
       transform: translateY(-4px);

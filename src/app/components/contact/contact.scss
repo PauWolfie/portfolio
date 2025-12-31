@@ -1,9 +1,14 @@
 // Contact Section Styles
 
 .contact {
+  position: relative;
+  overflow: hidden;
+
   &__container {
     max-width: 600px;
     text-align: center;
+    position: relative;
+    z-index: 2;
   }
 
   &__eyebrow {
@@ -37,6 +42,9 @@
     gap: var(--space-6);
     padding: var(--space-8);
     text-align: left;
+    position: relative;
+    z-index: 3;
+    background-color: var(--color-surface);
   }
 
   &__form-group {

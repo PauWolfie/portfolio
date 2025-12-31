@@ -7,34 +7,6 @@
   position: relative;
   overflow: hidden;
 
-  // Interactive particle canvas background
-  &__canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    pointer-events: none;
-  }
-
-  // Gradient overlay for depth
-  &__gradient-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    pointer-events: none;
-    background: radial-gradient(
-      ellipse 80% 50% at 50% -20%,
-      var(--color-accent-light) 0%,
-      transparent 50%
-    );
-    opacity: 0.5;
-  }
-
   &__container {
     width: 100%;
     position: relative;
