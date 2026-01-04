@@ -157,45 +157,27 @@
     position: relative;
     overflow: hidden;
 
-    &::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      opacity: 0;
-      transition: opacity var(--transition-base);
-    }
-
-    &:hover::before {
-      opacity: 1;
-    }
-
     &--email {
       color: white;
-      background: linear-gradient(135deg, var(--color-accent), var(--color-accent-hover));
-      box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
-
-      &::before {
-        background: linear-gradient(135deg, var(--color-accent-hover), var(--color-accent));
-      }
+      background-color: var(--color-accent);
+      box-shadow: var(--shadow-md);
 
       &:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
+        background-color: var(--color-accent-hover);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg);
       }
     }
 
     &--whatsapp {
       color: white;
-      background: linear-gradient(135deg, #25D366, #128C7E);
-      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-
-      &::before {
-        background: linear-gradient(135deg, #128C7E, #25D366);
-      }
+      background-color: #25D366;
+      box-shadow: var(--shadow-md);
 
       &:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+        background-color: #1da851;
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg);
       }
     }
 
