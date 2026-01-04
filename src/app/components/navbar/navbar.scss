@@ -217,12 +217,17 @@
     left: 0;
     right: 0;
     bottom: 0;
+    width: 100%;
+    height: calc(100vh - var(--navbar-height));
     background-color: var(--color-bg);
     padding: var(--space-8);
-    animation: fadeInUp var(--transition-base) ease;
     display: flex;
     flex-direction: column;
     gap: var(--space-8);
+    overflow-y: auto;
+    z-index: 101;
+    border-top: 1px solid var(--color-border);
+    animation: fadeInUp var(--transition-base) ease;
 
     @media (min-width: 768px) {
       display: none;
