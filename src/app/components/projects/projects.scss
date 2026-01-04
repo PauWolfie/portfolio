@@ -609,13 +609,14 @@ $device-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
     }
 
     &--primary {
-      background: linear-gradient(135deg, var(--color-accent), #7c3aed);
+      background-color: var(--color-accent);
       color: white;
-      box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+      box-shadow: var(--shadow-md);
 
       &:hover {
+        background-color: var(--color-accent-hover);
         transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+        box-shadow: var(--shadow-lg);
       }
     }
 
