@@ -6,14 +6,21 @@
     [mouseRadius]="100"
     [opacity]="0.6"
   ></app-particle-background>
-
   <div class="contact__container container">
     <h2 class="contact__title">Contacte</h2>
     <p class="contact__subtitle">Tens un projecte en ment? Parlem!</p>
 
     <div class="contact__content">
-      <!-- Imagen de perfil -->
+      <!-- Imagen de perfil con partículas de fondo -->
       <div class="contact__image-wrapper">
+        <div class="contact__image-particles">
+          <app-particle-background
+            [particleCount]="425"
+            [connectionDistance]="90"
+            [mouseRadius]="80"
+            [opacity]="0.8"
+          ></app-particle-background>
+        </div>
         <img
           src="assets/imgs/profileImgTransparent.png"
           alt="Foto de perfil"
@@ -25,8 +32,8 @@
       <div class="contact__info">
         <h3 class="contact__info-title">Posem-nos en contacte!</h3>
         <p class="contact__info-text">
-          Estic disponible per a projectes, col·laboracions o simplement per parlar sobre
-          tecnologia i desenvolupament web!
+          Estic disponible per a projectes, col·laboracions o simplement per parlar sobre tecnologia
+          i desenvolupament web!
         </p>
 
         <div class="contact__buttons">
