@@ -125,14 +125,11 @@ $device-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
   }
 
   @keyframes carousel-slide {
-    0%, 25% {
+    0%, 45% {
       transform: translateX(0);
     }
-    33%, 58% {
+    50%, 95% {
       transform: translateX(-100%);
-    }
-    66%, 91% {
-      transform: translateX(-200%);
     }
     100% {
       transform: translateX(0);
