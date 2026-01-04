@@ -84,9 +84,15 @@ $device-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
     min-height: 350px;
     perspective: 1000px;
     padding: var(--space-8);
+    overflow: hidden;
+    max-width: 100%;
 
     @media (min-width: 768px) {
-      min-height: 420px;
+      min-height: 480px;
+    }
+
+    @media (min-width: 1200px) {
+      min-height: 520px;
     }
   }
 
@@ -251,7 +257,7 @@ $device-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
   // Desktop Device
   &__device--desktop {
     z-index: 1;
-    transform: translateY(0) scale(0.85);
+    transform: translateY(0) scale(0.9);
 
     .projects__device-frame {
       border-radius: 16px;
@@ -264,8 +270,13 @@ $device-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
       border-radius: 4px;
 
       @media (min-width: 768px) {
-        width: 340px;
-        height: 210px;
+        width: 360px;
+        height: 225px;
+      }
+
+      @media (min-width: 1200px) {
+        width: 420px;
+        height: 265px;
       }
     }
   }
@@ -273,10 +284,14 @@ $device-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
   // Tablet Device
   &__device--tablet {
     z-index: 2;
-    transform: translateX(-100px) translateY(30px) scale(0.75) rotateY(15deg);
+    transform: translateX(-110px) translateY(30px) scale(0.8) rotateY(12deg);
 
     @media (min-width: 768px) {
-      transform: translateX(-140px) translateY(30px) scale(0.8) rotateY(15deg);
+      transform: translateX(-150px) translateY(40px) scale(0.85) rotateY(12deg);
+    }
+
+    @media (min-width: 1200px) {
+      transform: translateX(-180px) translateY(50px) scale(0.9) rotateY(12deg);
     }
 
     .projects__device-frame {
@@ -285,12 +300,17 @@ $device-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
     }
 
     .projects__device-screen {
-      width: 140px;
-      height: 190px;
+      width: 150px;
+      height: 200px;
 
       @media (min-width: 768px) {
-        width: 160px;
-        height: 220px;
+        width: 170px;
+        height: 230px;
+      }
+
+      @media (min-width: 1200px) {
+        width: 190px;
+        height: 260px;
       }
     }
   }
@@ -298,10 +318,14 @@ $device-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
   // Smartphone Device
   &__device--smartphone {
     z-index: 3;
-    transform: translateX(100px) translateY(40px) scale(0.7) rotateY(-15deg);
+    transform: translateX(110px) translateY(40px) scale(0.75) rotateY(-12deg);
 
     @media (min-width: 768px) {
-      transform: translateX(140px) translateY(40px) scale(0.75) rotateY(-15deg);
+      transform: translateX(150px) translateY(50px) scale(0.8) rotateY(-12deg);
+    }
+
+    @media (min-width: 1200px) {
+      transform: translateX(180px) translateY(60px) scale(0.85) rotateY(-12deg);
     }
 
     .projects__device-frame {
@@ -310,20 +334,25 @@ $device-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
     }
 
     .projects__device-notch {
-      width: 60px;
-      height: 20px;
+      width: 70px;
+      height: 22px;
       background: #1a1a1f;
       margin: 0 auto var(--space-1);
       border-radius: 0 0 12px 12px;
     }
 
     .projects__device-screen {
-      width: 100px;
-      height: 180px;
+      width: 120px;
+      height: 220px;
 
       @media (min-width: 768px) {
-        width: 110px;
-        height: 200px;
+        width: 140px;
+        height: 260px;
+      }
+
+      @media (min-width: 1200px) {
+        width: 160px;
+        height: 300px;
       }
     }
   }
