@@ -2,8 +2,7 @@
 
 // Variables
 $device-transition: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-$glow-color: rgba(99, 102, 241, 0.4);
-$device-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+$device-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
 
 .projects {
   position: relative;
@@ -69,29 +68,10 @@ $device-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
       align-items: center;
     }
 
-    &::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      background: radial-gradient(
-        800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-        rgba(99, 102, 241, 0.06),
-        transparent 40%
-      );
-      opacity: 0;
-      transition: opacity 0.4s ease;
-    }
-
-    &:hover::before,
-    &.active::before {
-      opacity: 1;
-    }
-
     &:hover,
     &.active {
-      border-color: rgba(99, 102, 241, 0.2);
-      box-shadow: 0 0 60px rgba(99, 102, 241, 0.1);
+      border-color: rgba(255, 255, 255, 0.12);
+      transform: translateY(-4px);
     }
   }
 
@@ -200,7 +180,6 @@ $device-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
         height: 100%;
         object-fit: cover;
         display: block;
-        transition: transform 0.6s ease;
       }
 
       &::after {
@@ -349,45 +328,6 @@ $device-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
     }
   }
 
-  // Hover states for devices
-  &__card:hover &__device--desktop,
-  &__card.active &__device--desktop {
-    transform: translateY(-10px) scale(0.9);
-    z-index: 3;
-
-    .projects__device-frame {
-      box-shadow: $device-shadow, 0 0 40px $glow-color;
-    }
-
-    .projects__device-screen img {
-      transform: scale(1.02);
-    }
-  }
-
-  &__card:hover &__device--tablet,
-  &__card.active &__device--tablet {
-    transform: translateX(-160px) translateY(0) scale(0.85) rotateY(5deg);
-
-    @media (min-width: 768px) {
-      transform: translateX(-200px) translateY(0) scale(0.9) rotateY(5deg);
-    }
-  }
-
-  &__card:hover &__device--smartphone,
-  &__card.active &__device--smartphone {
-    transform: translateX(160px) translateY(10px) scale(0.8) rotateY(-5deg);
-
-    @media (min-width: 768px) {
-      transform: translateX(200px) translateY(10px) scale(0.85) rotateY(-5deg);
-    }
-  }
-
-  &__card:hover &__device-label,
-  &__card.active &__device-label {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
   // Card Content
   &__card-content {
     padding: var(--space-4);
@@ -435,6 +375,7 @@ $device-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
     gap: var(--space-2);
     margin-bottom: var(--space-8);
     justify-content: center;
+    cursor: pointer;
 
     @media (min-width: 1024px) {
       justify-content: flex-start;

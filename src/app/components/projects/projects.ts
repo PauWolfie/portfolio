@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component } from '@angular/core';
 import { ParticleBackgroundComponent } from '../particle-background/particle-background';
 
 interface Project {
@@ -35,31 +35,19 @@ export class ProjectsComponent {
     {
       id: 1,
       title: 'Grindrack',
-      category: 'Web App',
-      description: 'Plataforma innovadora amb un disseny modern i funcionalitats avançades. Desenvolupada amb les últimes tecnologies per oferir una experiència d\'usuari excepcional.',
-      technologies: ['Angular', 'TypeScript', 'SCSS', 'Node.js'],
+      category: 'Progressive Web App',
+      description: 'Grindrack és una aplicació de gestió integral del rendiment físic que combina el seguiment de l\'evolució antropomètrica amb un registre tècnic d\'entrenaments, permetent analitzar històrics de volum, sèries i repeticions. L\'aplicació es diferencia per la integració de tecnologia d\'Intel·ligència Artificial en el seu mòdul nutricional, utilitzant reconeixement d\'imatge i processament de llenguatge natural per automatitzar l\'extracció i càlcul de calories i macronutrients a l\'instant.',
+      technologies: ['React', 'Tailwind CSS', 'Next.js', 'Firestore'],
       images: {
         desktop: 'assets/imgs/Grindrack_desktop.png',
         tablet: 'assets/imgs/Grindrack_tablet.png',
         smartphone: 'assets/imgs/Grindrack_smartphone.png',
       },
-      liveUrl: '#',
-      repoUrl: '#',
+      liveUrl: 'https://grindrack.pauwolfie.dev/',
+      repoUrl: 'https://github.com/PauWolfie/grindrack',
     },
     // Añade más proyectos aquí cuando los tengas
   ];
-
-  @HostListener('document:mousemove', ['$event'])
-  onMouseMove(event: MouseEvent): void {
-    const cards = document.querySelectorAll('.projects__card');
-    cards.forEach((card) => {
-      const rect = (card as HTMLElement).getBoundingClientRect();
-      const x = ((event.clientX - rect.left) / rect.width) * 100;
-      const y = ((event.clientY - rect.top) / rect.height) * 100;
-      (card as HTMLElement).style.setProperty('--mouse-x', `${x}%`);
-      (card as HTMLElement).style.setProperty('--mouse-y', `${y}%`);
-    });
-  }
 
   setActiveProject(id: number): void {
     this.activeProject = id;
