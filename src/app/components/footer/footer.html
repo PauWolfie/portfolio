@@ -3,30 +3,33 @@
     <div class="footer__content">
       <!-- Logo / Brand -->
       <div class="footer__brand">
-        <span class="footer__logo">PL</span>
-        <p class="footer__tagline">[Tagline / Eslògan]</p>
+        <a href="#inici" class="footer__logo">
+          <img
+            src="assets/imgs/profileImgTransparent.png"
+            alt="Pau Llobet"
+            class="footer__logo-img"
+          />
+        </a>
       </div>
 
       <!-- Social Links -->
       <nav class="footer__social">
         @for (link of socialLinks; track link.name) {
-          <a
-            [href]="link.href"
-            class="footer__social-link"
-            [attr.aria-label]="link.name"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            [{{ link.icon }}]
-          </a>
+        <a
+          [href]="link.href"
+          class="footer__social-link"
+          [attr.aria-label]="link.name"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i [attr.data-lucide]="link.icon"></i>
+        </a>
         }
       </nav>
     </div>
 
     <div class="footer__bottom">
-      <p class="footer__copyright">
-        © {{ currentYear }} Pau Llobet. Tots els drets reservats.
-      </p>
+      <p class="footer__copyright">© {{ currentYear }} Pau Llobet. Tots els drets reservats.</p>
     </div>
   </div>
 </footer>

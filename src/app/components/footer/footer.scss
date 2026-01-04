@@ -32,9 +32,22 @@
   }
 
   &__logo {
-    font-size: var(--font-size-2xl);
-    font-weight: 700;
-    letter-spacing: -0.02em;
+    display: inline-block;
+  }
+
+  &__logo-img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: var(--color-bg);
+    padding: 2px;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 0 2px var(--color-accent);
+    }
   }
 
   &__tagline {
@@ -53,11 +66,15 @@
     justify-content: center;
     width: 40px;
     height: 40px;
-    font-size: var(--font-size-xs);
     color: var(--color-bg);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: var(--radius-full);
     transition: all var(--transition-fast);
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
 
     &:hover {
       background-color: var(--color-accent);

@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
+
+declare const lucide: any;
 
 /**
  * Footer Component
  * Site footer with social links and copyright
- * Placeholder mode - wireframe visualization
  */
 @Component({
   selector: 'app-footer',
@@ -11,12 +12,18 @@ import { Component } from '@angular/core';
   templateUrl: './footer.html',
   styleUrls: ['./footer.scss'],
 })
-export class FooterComponent {
+export class FooterComponent implements AfterViewInit {
   protected readonly currentYear = new Date().getFullYear();
 
   protected readonly socialLinks = [
-    { name: 'GitHub', href: '#', icon: 'github' },
-    { name: 'LinkedIn', href: '#', icon: 'linkedin' },
-    { name: 'Twitter', href: '#', icon: 'twitter' },
+    { name: 'GitHub', href: 'https://github.com/PauWolfie', icon: 'github' },
+    { name: 'LinkedIn', href: 'https://www.linkedin.com/in/pau-llobet-67767226a/', icon: 'linkedin' },
   ];
+
+  ngAfterViewInit(): void {
+    // Initialize Lucide icons after view is ready
+    if (typeof lucide !== 'undefined') {
+      setTimeout(() => lucide.createIcons(), 100);
+    }
+  }
 }
