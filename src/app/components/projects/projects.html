@@ -1,17 +1,87 @@
 <section class="projects section">
   <!-- Dynamic interactive background -->
-  <app-particle-background [particleCount]="50" [connectionDistance]="100" [mouseRadius]="120" [opacity]="0.7"></app-particle-background>
-  
+  <app-particle-background
+    [particleCount]="50"
+    [connectionDistance]="100"
+    [mouseRadius]="120"
+    [opacity]="0.7"
+  ></app-particle-background>
+
   <div class="projects__container container">
     <h2 class="projects__title">Projectes</h2>
     <p class="projects__subtitle">Una selecció dels meus treballs recents</p>
 
     <div class="projects__showcase">
       @for (project of projects; track project.id) {
-        <article class="projects__card" [class.active]="activeProject === project.id" (mouseenter)="setActiveProject(project.id)" (mouseleave)="resetActiveProject()">
-          
-          <!-- Device Display Area -->
-          <div class="projects__devices">
+      <article
+        class="projects__card"
+        [class.active]="activeProject === project.id"
+        (mouseenter)="setActiveProject(project.id)"
+        (mouseleave)="resetActiveProject()"
+      >
+        <!-- Device Display Area -->
+        <div class="projects__devices">
+          <!-- Mobile Carousel -->
+          <div class="projects__carousel">
+            <div class="projects__carousel-track">
+              <!-- Desktop Device -->
+              <div class="projects__carousel-slide">
+                <div class="projects__device projects__device--desktop-mobile">
+                  <div class="projects__device-frame">
+                    <div class="projects__device-notch">
+                      <span class="projects__device-camera"></span>
+                    </div>
+                    <div class="projects__device-screen">
+                      <img
+                        [src]="project.images.desktop"
+                        [alt]="project.title + ' - Desktop'"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="projects__device-stand"></div>
+                  </div>
+                  <span class="projects__device-label">Desktop</span>
+                </div>
+              </div>
+
+              <!-- Tablet Device -->
+              <div class="projects__carousel-slide">
+                <div class="projects__device projects__device--tablet-mobile">
+                  <div class="projects__device-frame">
+                    <div class="projects__device-screen">
+                      <img
+                        [src]="project.images.tablet"
+                        [alt]="project.title + ' - Tablet'"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="projects__device-button"></div>
+                  </div>
+                  <span class="projects__device-label">Tablet</span>
+                </div>
+              </div>
+
+              <!-- Smartphone Device -->
+              <div class="projects__carousel-slide">
+                <div class="projects__device projects__device--smartphone-mobile">
+                  <div class="projects__device-frame">
+                    <div class="projects__device-notch"></div>
+                    <div class="projects__device-screen">
+                      <img
+                        [src]="project.images.smartphone"
+                        [alt]="project.title + ' - Mòbil'"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+                  <span class="projects__device-label">Mòbil</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Desktop 3D View -->
+          <div class="projects__devices-3d">
             <!-- Desktop Device -->
             <div class="projects__device projects__device--desktop">
               <div class="projects__device-frame">
@@ -19,22 +89,28 @@
                   <span class="projects__device-camera"></span>
                 </div>
                 <div class="projects__device-screen">
-                  <img [src]="project.images.desktop" [alt]="project.title + ' - Desktop'" loading="lazy">
+                  <img
+                    [src]="project.images.desktop"
+                    [alt]="project.title + ' - Desktop'"
+                    loading="lazy"
+                  />
                 </div>
                 <div class="projects__device-stand"></div>
               </div>
-              <span class="projects__device-label">Desktop</span>
             </div>
 
             <!-- Tablet Device -->
             <div class="projects__device projects__device--tablet">
               <div class="projects__device-frame">
                 <div class="projects__device-screen">
-                  <img [src]="project.images.tablet" [alt]="project.title + ' - Tablet'" loading="lazy">
+                  <img
+                    [src]="project.images.tablet"
+                    [alt]="project.title + ' - Tablet'"
+                    loading="lazy"
+                  />
                 </div>
                 <div class="projects__device-button"></div>
               </div>
-              <span class="projects__device-label">Tablet</span>
             </div>
 
             <!-- Smartphone Device -->
@@ -42,48 +118,89 @@
               <div class="projects__device-frame">
                 <div class="projects__device-notch"></div>
                 <div class="projects__device-screen">
-                  <img [src]="project.images.smartphone" [alt]="project.title + ' - Mòbil'" loading="lazy">
+                  <img
+                    [src]="project.images.smartphone"
+                    [alt]="project.title + ' - Mòbil'"
+                    loading="lazy"
+                  />
                 </div>
               </div>
-              <span class="projects__device-label">Mòbil</span>
-            </div>
-
-            <!-- Floating Particles Effect -->
-            <div class="projects__particles">
-              <span></span><span></span><span></span><span></span><span></span>
             </div>
           </div>
 
-          <!-- Project Info -->
-          <div class="projects__card-content">
-            <span class="projects__card-category">{{ project.category }}</span>
-            <h3 class="projects__card-title">{{ project.title }}</h3>
-            <p class="projects__card-description">{{ project.description }}</p>
-            
-            <!-- Tech Stack -->
-            <div class="projects__tech-stack">
-              @for (tech of project.technologies; track tech) {
-                <span class="projects__tech-tag">{{ tech }}</span>
-              }
-            </div>
-
-            <!-- Action Buttons -->
-            <div class="projects__card-actions">
-              @if (project.liveUrl) {
-                <a [href]="project.liveUrl" target="_blank" rel="noopener noreferrer" class="projects__btn projects__btn--primary">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                  Veure més
-                </a>
-              }
-              @if (project.repoUrl) {
-                <a [href]="project.repoUrl" target="_blank" rel="noopener noreferrer" class="projects__btn projects__btn--secondary">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                  Codi Font
-                </a>
-              }
-            </div>
+          <!-- Floating Particles Effect -->
+          <div class="projects__particles">
+            <span></span><span></span><span></span><span></span><span></span>
           </div>
-        </article>
+        </div>
+
+        <!-- Project Info -->
+        <div class="projects__card-content">
+          <span class="projects__card-category">{{ project.category }}</span>
+          <h3 class="projects__card-title">{{ project.title }}</h3>
+          <p class="projects__card-description">{{ project.description }}</p>
+
+          <!-- Tech Stack -->
+          <div class="projects__tech-stack">
+            @for (tech of project.technologies; track tech) {
+            <span class="projects__tech-tag">{{ tech }}</span>
+            }
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="projects__card-actions">
+            @if (project.liveUrl) {
+            <a
+              [href]="project.liveUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="projects__btn projects__btn--primary"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+              Veure més
+            </a>
+            } @if (project.repoUrl) {
+            <a
+              [href]="project.repoUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="projects__btn projects__btn--secondary"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                />
+              </svg>
+              Codi Font
+            </a>
+            }
+          </div>
+        </div>
+      </article>
       }
     </div>
   </div>
