@@ -1,5 +1,6 @@
-import { Component, OnInit, OnDestroy, signal } from '@angular/core';
+import { Component, OnInit, OnDestroy, signal, effect } from '@angular/core';
 import { ParticleBackgroundComponent } from '../particle-background/particle-background';
+import { LanguageService } from '../../services/language.service';
 
 /**
  * Hero Component
@@ -13,16 +14,17 @@ import { ParticleBackgroundComponent } from '../particle-background/particle-bac
   styleUrls: ['./hero.scss'],
 })
 export class HeroComponent implements OnInit, OnDestroy {
-  /** Professional phrases to cycle through with typewriter effect */
-  private readonly phrases: string[] = [
-    'Creant solucions escalables i robustes',
-    'Desenvolupant APIs eficients i segures',
-    'Optimitzant rendiment i experiència d\'usuari',
-    'Dissenyant arquitectures netes i mantenibles',
-    'Automatitzant processos i fluxos de treball',
-    'Integrant sistemes i serveis al núvol',
-    'Implementant tests i CI/CD pipelines',
-  ];
+  constructor(protected readonly languageService: LanguageService) {
+    effect(() => {
+      // Restart typewriter when language changes
+      this.languageService.currentLang(); // dependency
+      this.currentPhraseIndex = 0;
+      this.currentCharIndex = 0;
+      this.isDeleting = false;
+      if (this.typewriterTimeout) clearTimeout(this.typewriterTimeout);
+      this.startTypewriter();
+    });
+  }
 
   /** Current displayed text */
   displayedText = signal<string>('');
@@ -66,7 +68,8 @@ export class HeroComponent implements OnInit, OnDestroy {
   }
 
   private startTypewriter(): void {
-    const currentPhrase = this.phrases[this.currentPhraseIndex];
+    const phrases = this.languageService.t().hero.phrases;
+    const currentPhrase = phrases[this.currentPhraseIndex];
 
     if (this.isDeleting) {
       // Deleting characters
@@ -77,7 +80,7 @@ export class HeroComponent implements OnInit, OnDestroy {
       } else {
         // Finished deleting, move to next phrase
         this.isDeleting = false;
-        this.currentPhraseIndex = (this.currentPhraseIndex + 1) % this.phrases.length;
+        this.currentPhraseIndex = (this.currentPhraseIndex + 1) % phrases.length;
         this.typewriterTimeout = setTimeout(() => this.startTypewriter(), this.pauseBeforeType);
       }
     } else {

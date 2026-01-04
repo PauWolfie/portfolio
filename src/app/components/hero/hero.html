@@ -1,19 +1,28 @@
 <section class="hero section">
   <!-- Dynamic interactive background -->
-  <app-particle-background [particleCount]="80" [connectionDistance]="120" [mouseRadius]="150"></app-particle-background>
-  
+  <app-particle-background
+    [particleCount]="80"
+    [connectionDistance]="120"
+    [mouseRadius]="150"
+  ></app-particle-background>
+
   <div class="hero__container container">
     <div class="hero__content">
       <h1 class="hero__title">
         <span class="text-accent">Pau Llobet</span>
       </h1>
-      <p class="hero__subtitle">Enginyer Software</p>
+      <p class="hero__subtitle">{{ languageService.t().hero.subtitle }}</p>
       <p class="hero__description hero__typewriter">
-        <span class="hero__typewriter-text">{{ displayedText() }}</span><span class="hero__cursor" [class.hero__cursor--visible]="showCursor()">|</span>
+        <span class="hero__typewriter-text">{{ displayedText() }}</span
+        ><span class="hero__cursor" [class.hero__cursor--visible]="showCursor()">|</span>
       </p>
       <div class="hero__cta">
-        <a href="#contacte" class="hero__button hero__button--primary">Contacte</a>
-        <a href="#projectes" class="hero__button hero__button--secondary">Veure projectes</a>
+        <a href="#contacte" class="hero__button hero__button--primary">{{
+          languageService.t().hero.contact
+        }}</a>
+        <a href="#projectes" class="hero__button hero__button--secondary">{{
+          languageService.t().hero.viewProjects
+        }}</a>
       </div>
     </div>
   </div>

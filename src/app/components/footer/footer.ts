@@ -1,4 +1,5 @@
 import { Component, AfterViewInit } from '@angular/core';
+import { LanguageService } from '../../services/language.service';
 
 declare const lucide: any;
 
@@ -14,6 +15,8 @@ declare const lucide: any;
 })
 export class FooterComponent implements AfterViewInit {
   protected readonly currentYear = new Date().getFullYear();
+
+  constructor(protected readonly languageService: LanguageService) {}
 
   protected readonly socialLinks = [
     { name: 'GitHub', href: 'https://github.com/PauWolfie', icon: 'github' },

@@ -94,6 +94,69 @@
     gap: var(--space-4);
   }
 
+  // Language Dropdown
+  &__lang-wrapper {
+    position: relative;
+  }
+
+  &__lang-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-fast);
+
+    &:hover {
+      color: var(--color-text);
+      background-color: var(--color-bg-secondary);
+    }
+  }
+
+  &__lang-icon {
+    transition: transform var(--transition-fast);
+
+    &--open {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__lang-menu {
+    position: absolute;
+    top: calc(100% + var(--space-2));
+    right: 0;
+    min-width: 120px;
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-1);
+    box-shadow: var(--shadow-md);
+    animation: fadeIn var(--transition-fast) ease-out;
+  }
+
+  &__lang-item {
+    width: 100%;
+    text-align: left;
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-fast);
+
+    &:hover {
+      color: var(--color-text);
+      background-color: var(--color-bg-secondary);
+    }
+
+    &.active {
+      color: var(--color-accent);
+      background-color: var(--color-bg-secondary);
+    }
+  }
+
   // Mobile Toggle
   &__mobile-toggle {
     display: flex;
@@ -184,8 +247,8 @@
     }
   }
 
-  // Theme toggle in mobile menu
-  &__mobile-theme {
+  // Mobile Menu Groups (Theme & Language)
+  &__mobile-group {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -193,9 +256,31 @@
     border-top: 1px solid var(--color-border);
   }
 
-  &__mobile-theme-label {
+  &__mobile-label {
     font-size: var(--font-size-lg);
     font-weight: 500;
     color: var(--color-text-secondary);
   }
+
+  &__mobile-langs {
+    display: flex;
+    gap: var(--space-2);
+  }
+
+  &__mobile-lang-btn {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-border);
+    transition: all var(--transition-fast);
+
+    &.active {
+      color: var(--color-bg);
+      background-color: var(--color-text);
+      border-color: var(--color-text);
+    }
+  }
 }
+

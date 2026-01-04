@@ -1,5 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { ParticleBackgroundComponent } from '../particle-background/particle-background';
+import { LanguageService } from '../../services/language.service';
 
 /**
  * Contact Component
@@ -18,4 +19,6 @@ export class ContactComponent {
     email: '',
     message: '',
   });
+
+  constructor(protected readonly languageService: LanguageService) {}
 }

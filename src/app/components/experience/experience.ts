@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, computed } from '@angular/core';
+import { LanguageService } from '../../services/language.service';
 
 /**
  * Experience Component
@@ -12,27 +13,32 @@ import { Component } from '@angular/core';
   styleUrls: ['./experience.scss'],
 })
 export class ExperienceComponent {
-  protected readonly experiences = [
-    {
-      id: 1,
-      role: 'Enginyer I+D',
-      company: 'Mychef Technologies',
-      period: 'oct. 2023 - Actualitat',
-      description: 'Desplegament i desenvolupament de Mychef Cloud. Disseny i implementació de diverses aplicacións de gestió interna.',
-    },
-    {
-      id: 2,
-      role: 'Full Stack Developer',
-      company: 'Mychef Technologies',
-      period: 'ene. 2023 - oct. 2023',
-      description: 'Creació de la plataforma cloud per la conexió dels diferents dispositius de Mychef.',
-    },
-    {
-      id: 3,
-      role: 'Frontend Developer',
-      company: 'Mychef Technologies',
-      period: 'ago. 2022 - ene.2023',
-      description: 'Programador en pràctiques. Creació d\'un sistema per al control de versions documental automàtic basat en aprovacions.',
-    },
-  ];
+  constructor(public languageService: LanguageService) {}
+
+  protected readonly experiences = computed(() => {
+    const t = this.languageService.t().experience.items;
+    return [
+      {
+        id: 1,
+        role: t[0].role,
+        company: t[0].company,
+        period: `${t[0].period} - ${this.languageService.t().experience.present}`,
+        description: t[0].description,
+      },
+      {
+        id: 2,
+        role: t[1].role,
+        company: t[1].company,
+        period: t[1].period,
+        description: t[1].description,
+      },
+      {
+        id: 3,
+        role: t[2].role,
+        company: t[2].company,
+        period: t[2].period,
+        description: t[2].description,
+      },
+    ];
+  });
 }

@@ -7,15 +7,54 @@
 
     <!-- Desktop Navigation -->
     <ul class="navbar__links">
-      @for (link of navLinks; track link.href) {
-        <li>
-          <a [href]="link.href" class="navbar__link">{{ link.label }}</a>
-        </li>
+      @for (link of navLinks(); track link.href) {
+      <li>
+        <a [href]="link.href" class="navbar__link">{{ link.label }}</a>
+      </li>
       }
     </ul>
 
-    <!-- Desktop Actions (Theme Toggle) -->
     <div class="navbar__actions">
+      <div class="navbar__lang-wrapper">
+        <button
+          class="navbar__lang-btn"
+          (click)="toggleLangMenu()"
+          [attr.aria-expanded]="isLangMenuOpen()"
+          aria-label="Change language"
+        >
+          {{ languageService.currentLang().toUpperCase() }}
+          <svg
+            class="navbar__lang-icon"
+            [class.navbar__lang-icon--open]="isLangMenuOpen()"
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m6 9 6 6 6-6" />
+          </svg>
+        </button>
+
+        @if (isLangMenuOpen()) {
+        <div class="navbar__lang-menu">
+          @for (lang of languages; track lang.code) {
+          <button
+            class="navbar__lang-item"
+            [class.active]="languageService.currentLang() === lang.code"
+            (click)="changeLanguage(lang.code)"
+          >
+            {{ lang.label }}
+          </button>
+          }
+        </div>
+        }
+      </div>
+
       <app-theme-toggle />
 
       <!-- Mobile Menu Button -->
@@ -31,22 +70,38 @@
 
     <!-- Mobile Navigation -->
     @if (isMobileMenuOpen()) {
-      <div class="navbar__mobile-menu">
-        <ul class="navbar__mobile-links">
-          @for (link of navLinks; track link.href) {
-            <li>
-              <a [href]="link.href" class="navbar__mobile-link" (click)="closeMobileMenu()">
-                {{ link.label }}
-              </a>
-            </li>
+    <div class="navbar__mobile-menu">
+      <ul class="navbar__mobile-links">
+        @for (link of navLinks(); track link.href) {
+        <li>
+          <a [href]="link.href" class="navbar__mobile-link" (click)="closeMobileMenu()">
+            {{ link.label }}
+          </a>
+        </li>
+        }
+      </ul>
+      <!-- Language mobile -->
+      <div class="navbar__mobile-group">
+        <span class="navbar__mobile-label">{{ languageService.t().navbar.language }}</span>
+        <div class="navbar__mobile-langs">
+          @for (lang of languages; track lang.code) {
+          <button
+            class="navbar__mobile-lang-btn"
+            [class.active]="languageService.currentLang() === lang.code"
+            (click)="changeLanguage(lang.code)"
+          >
+            {{ lang.code.toUpperCase() }}
+          </button>
           }
-        </ul>
-        <!-- Theme toggle in mobile menu -->
-        <div class="navbar__mobile-theme">
-          <span class="navbar__mobile-theme-label">Tema</span>
-          <app-theme-toggle />
         </div>
       </div>
+
+      <!-- Theme toggle in mobile menu -->
+      <div class="navbar__mobile-group">
+        <span class="navbar__mobile-label">{{ languageService.t().navbar.theme }}</span>
+        <app-theme-toggle />
+      </div>
+    </div>
     }
   </nav>
 </header>

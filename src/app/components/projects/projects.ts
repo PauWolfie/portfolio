@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, computed } from '@angular/core';
 import { ParticleBackgroundComponent } from '../particle-background/particle-background';
+import { LanguageService } from '../../services/language.service';
 
 interface Project {
   id: number;
@@ -31,23 +32,28 @@ interface Project {
 export class ProjectsComponent {
   protected activeProject: number | null = null;
 
-  protected readonly projects: Project[] = [
-    {
-      id: 1,
-      title: 'Grindrack',
-      category: 'Progressive Web App',
-      description: 'Grindrack és una aplicació de gestió integral del rendiment físic que combina el seguiment de l\'evolució antropomètrica amb un registre tècnic d\'entrenaments, permetent analitzar històrics de volum, sèries i repeticions. L\'aplicació es diferencia per la integració de tecnologia d\'Intel·ligència Artificial en el seu mòdul nutricional, utilitzant reconeixement d\'imatge i processament de llenguatge natural per automatitzar l\'extracció i càlcul de calories i macronutrients a l\'instant.',
-      technologies: ['React', 'Tailwind CSS', 'Next.js', 'Firestore'],
-      images: {
-        desktop: 'assets/imgs/Grindrack_desktop.png',
-        tablet: 'assets/imgs/Grindrack_tablet.png',
-        smartphone: 'assets/imgs/Grindrack_smartphone.png',
+  constructor(protected readonly languageService: LanguageService) {}
+
+  protected readonly projects = computed(() => {
+    const t = this.languageService.t().projects.items;
+    return [
+      {
+        id: 1,
+        title: t[0].title,
+        category: t[0].category,
+        description: t[0].description,
+        technologies: ['React', 'Tailwind CSS', 'Next.js', 'Firestore'],
+        images: {
+          desktop: 'assets/imgs/Grindrack_desktop.png',
+          tablet: 'assets/imgs/Grindrack_tablet.png',
+          smartphone: 'assets/imgs/Grindrack_smartphone.png',
+        },
+        liveUrl: 'https://grindrack.pauwolfie.dev/',
+        repoUrl: 'https://github.com/PauWolfie/grindrack',
       },
-      liveUrl: 'https://grindrack.pauwolfie.dev/',
-      repoUrl: 'https://github.com/PauWolfie/grindrack',
-    },
-    // Añade más proyectos aquí cuando los tengas
-  ];
+      // Añade más proyectos aquí cuando los tengas
+    ];
+  });
 
   setActiveProject(id: number): void {
     this.activeProject = id;
