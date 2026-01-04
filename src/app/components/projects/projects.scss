@@ -89,7 +89,7 @@ $device-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
     @media (min-width: 768px) {
       min-height: 420px;
       padding: var(--space-8);
-      overflow: hidden;
+      overflow: visible;
     }
 
     @media (min-width: 1200px) {
