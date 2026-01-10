@@ -51,7 +51,34 @@ export class ProjectsComponent {
         liveUrl: 'https://grindrack.pauwolfie.dev/',
         repoUrl: 'https://github.com/PauWolfie/grindrack',
       },
-      // Añade más proyectos aquí cuando los tengas
+      {
+        id: 2,
+        title: t[1].title,
+        category: t[1].category,
+        description: t[1].description,
+        technologies: ['Python', 'Machine Learning', 'Langchain', 'Google Cloud', 'Vertex AI'],
+        images: {
+          desktop: 'assets/imgs/placeholder_desktop.png',
+          tablet: 'assets/imgs/placeholder_tablet.png',
+          smartphone: 'assets/imgs/placeholder_smartphone.png',
+        },
+        liveUrl: 'https://repositori.udl.cat/items/818baa19-4024-41be-b84b-b8bfc24f0127',
+        repoUrl: 'https://github.com/PauWolfie/RAG-system',
+      },
+      {
+        id: 3,
+        title: t[2].title,
+        category: t[2].category,
+        description: t[2].description,
+        technologies: ['Java', 'Springboot', 'Google Cloud', 'Docker', 'Artifact Registry', 'Compute Engine'],
+        images: {
+          desktop: 'assets/imgs/placeholder_desktop.png',
+          tablet: 'assets/imgs/placeholder_tablet.png',
+          smartphone: 'assets/imgs/placeholder_smartphone.png',
+        },
+        liveUrl: 'https://repositori.udl.cat/items/2491f3e9-aa59-482e-a015-582d73bdae97',
+        repoUrl: 'https://api.mychef-cloud.com/',
+      },
     ];
   });
 

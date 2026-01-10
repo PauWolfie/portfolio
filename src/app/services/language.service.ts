@@ -205,6 +205,20 @@ const translationsCa: Translations = {
         description:
           "Grindrack és una aplicació de gestió integral del rendiment físic que combina el seguiment de l'evolució antropomètrica amb un registre tècnic d'entrenaments, permetent analitzar històrics de volum, sèries i repeticions. L'aplicació es diferencia per la integració de tecnologia d'Intel·ligència Artificial en el seu mòdul nutricional, utilitzant reconeixement d'imatge i processament de llenguatge natural per automatitzar l'extracció i càlcul de calories i macronutrients a l'instant.",
       },
+      {
+        id: 2,
+        title: 'Sistema RAG',
+        category: 'Treball Final de Màster',
+        description:
+          "Sistema RAG per a la gestió d'incidències relacionades amb un àmbit de coneixement particular. En el cas concret del projecte, va ser desenvolupat en el marc del Treball Final de Màster conjuntament amb l'empresa Mychef Technologies.",
+      },
+      {
+        id: 3,
+        title: 'Springboot Rest API',
+        category: 'Treball Final de Grau',
+        description:
+          "REST API inclosa en el marc de desenvolupament del Treball Final de Grau amb l'empresa Mychef Technologies. Sistema desenvolupat en Java + Spring i desplegat a Compute Engine de Google Cloud. S'encarrega de la gestió de tot l'ecosistema Mychef, incloent-hi l'aplicació cloud.",
+      },
     ],
   },
   experience: {
@@ -270,7 +284,7 @@ const translationsCa: Translations = {
           id: 3,
           degree: 'Batxillerat Tecnològic',
           institution: 'Institut Joan Solà',
-        }
+        },
       ],
     },
     certifications: {
@@ -408,6 +422,20 @@ const translationsEn: Translations = {
         description:
           'Grindrack is a comprehensive physical performance management app that combines anthropometric evolution tracking with a technical training log, allowing historical analysis of volume, sets, and repetitions. The app stands out for its integration of Artificial Intelligence technology in its nutritional module, using image recognition and natural language processing to automate the extraction and calculation of calories and macronutrients instantly.',
       },
+      {
+        id: 2,
+        title: 'RAG System',
+        category: "Master's Thesis",
+        description:
+          "RAG system for managing incidents related to a particular area of knowledge. In the specific case of the project, it was developed as part of the Master's Thesis in collaboration with Mychef Technologies.",
+      },
+      {
+        id: 3,
+        title: 'Springboot Rest API',
+        category: "Bachelor's Thesis",
+        description:
+          "REST API included in the development framework of the Bachelor's Thesis with Mychef Technologies. System developed in Java + Spring and deployed on Google Cloud Compute Engine. It manages the entire Mychef ecosystem, including the cloud application.",
+      },
     ],
   },
   experience: {
@@ -461,12 +489,17 @@ const translationsEn: Translations = {
         {
           id: 1,
           degree: "Master's Degree in Computer Engineering",
-          institution: 'Autonomous University of Barcelona',
+          institution: 'Specialization in Project Management - University of Lleida',
         },
         {
           id: 2,
           degree: "Bachelor's Degree in Computer Engineering",
-          institution: 'Autonomous University of Barcelona',
+          institution: 'University of Lleida',
+        },
+        {
+          id: 3,
+          degree: 'Technology Baccalaureate',
+          institution: 'Institut Joan Solà',
         },
       ],
     },
@@ -475,9 +508,9 @@ const translationsEn: Translations = {
       items: [
         {
           id: 1,
-          name: 'Claude Code Certificate',
+          name: 'Claude Code in Action',
           issuer: 'Anthropic',
-          link: 'https://www.anthropic.com',
+          link: 'https://verify.skilljar.com/c/o7hz6vsq4tdn',
         },
         {
           id: 2,
@@ -605,6 +638,20 @@ const translationsEs: Translations = {
         description:
           'Grindrack es una aplicación de gestión integral del rendimiento físico que combina el seguimiento de la evolución antropométrica con un registro técnico de entrenamientos, permitiendo analizar históricos de volumen, series y repeticiones. La aplicación se diferencia por la integración de tecnología de Inteligencia Artificial en su módulo nutricional, utilizando reconocimiento de imagen y procesamiento de lenguaje natural para automatizar la extracción y cálculo de calorías y macronutrientes al instante.',
       },
+      {
+        id: 2,
+        title: 'Sistema RAG',
+        category: 'Trabajo Final de Máster',
+        description:
+          'Sistema RAG para la gestión de incidencias relacionadas con un ámbito de conocimiento particular. En el caso concreto del proyecto, fue desarrollado en el marco del Trabajo Final de Máster conjuntamente con la empresa Mychef Technologies.',
+      },
+      {
+        id: 3,
+        title: 'Springboot Rest API',
+        category: 'Trabajo Final de Grado',
+        description:
+          'REST API incluida en el marco de desarrollo del Trabajo Final de Grado con la empresa Mychef Technologies. Sistema desarrollado en Java + Spring y desplegado en Compute Engine de Google Cloud. Se encarga de la gestión de todo el ecosistema Mychef, incluyendo la aplicación cloud.',
+      },
     ],
   },
   experience: {
@@ -659,12 +706,17 @@ const translationsEs: Translations = {
         {
           id: 1,
           degree: 'Máster Oficial en Ingeniería Informática',
-          institution: 'Universidad Autónoma de Barcelona',
+          institution: 'Especialización en Gestión de Proyectos - Universidad de Lleida',
         },
         {
           id: 2,
           degree: 'Grado en Ingeniería Informática',
-          institution: 'Universidad Autónoma de Barcelona',
+          institution: 'Universidad de Lleida',
+        },
+        {
+          id: 3,
+          degree: 'Bachillerato Tecnológico',
+          institution: 'Institut Joan Solà',
         },
       ],
     },
@@ -673,9 +725,9 @@ const translationsEs: Translations = {
       items: [
         {
           id: 1,
-          name: 'Claude Code Certificate',
+          name: 'Claude Code in Action',
           issuer: 'Anthropic',
-          link: 'https://www.anthropic.com',
+          link: 'https://verify.skilljar.com/c/o7hz6vsq4tdn',
         },
         {
           id: 2,
