@@ -191,25 +191,15 @@
   &__marquee {
     width: 100%;
     overflow: hidden;
-    mask-image: linear-gradient(
-      to right,
-      transparent,
-      black 10%,
-      black 90%,
-      transparent
-    );
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
     margin-top: var(--space-8);
   }
 
   &__marquee-track {
     display: flex;
     gap: var(--space-6);
-    animation: marquee 30s linear infinite;
     width: fit-content;
-
-    &:hover {
-      animation-play-state: paused;
-    }
+    will-change: transform;
   }
 
   &__item {
@@ -244,14 +234,5 @@
         color: var(--color-accent);
       }
     }
-  }
-}
-
-@keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
   }
 }

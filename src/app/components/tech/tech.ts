@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, computed } from '@angular/core';
+import { Component, AfterViewInit, OnDestroy, computed, ViewChild, ElementRef, NgZone } from '@angular/core';
 import { LanguageService } from '../../services/language.service';
 
 declare const lucide: any;
@@ -13,8 +13,19 @@ declare const lucide: any;
   templateUrl: './tech.html',
   styleUrls: ['./tech.scss'],
 })
-export class TechComponent {
-  constructor(public languageService: LanguageService) {}
+export class TechComponent implements AfterViewInit, OnDestroy {
+  @ViewChild('marqueeTrack') marqueeTrack!: ElementRef<HTMLDivElement>;
+
+  // Marquee animation state
+  private position = 0;
+  private currentSpeed = 0;
+  private targetSpeed = 2.5;
+  private readonly maxSpeed = 2.5;
+  private readonly acceleration = 0.1; // How fast it speeds up/slows down
+  private animationId: number | null = null;
+  private trackWidth = 0;
+
+  constructor(public languageService: LanguageService, private ngZone: NgZone) {}
 
   protected readonly categories = computed(() => {
     const t = this.languageService.t().tech.categories;
@@ -99,6 +110,62 @@ export class TechComponent {
     // Initialize Lucide icons after view is ready
     if (typeof lucide !== 'undefined') {
       setTimeout(() => lucide.createIcons(), 100);
+    }
+
+    // Start marquee animation outside Angular zone for performance
+    this.ngZone.runOutsideAngular(() => {
+      setTimeout(() => this.initMarquee(), 200);
+    });
+  }
+
+  private initMarquee(): void {
+    if (!this.marqueeTrack?.nativeElement) return;
+
+    const track = this.marqueeTrack.nativeElement;
+    // Get half of track width (since we duplicate items for seamless loop)
+    this.trackWidth = track.scrollWidth / 2;
+    this.currentSpeed = this.maxSpeed;
+    this.targetSpeed = this.maxSpeed;
+    this.animate();
+  }
+
+  private animate = (): void => {
+    // Gradually adjust current speed towards target speed
+    if (this.currentSpeed < this.targetSpeed) {
+      this.currentSpeed = Math.min(this.currentSpeed + this.acceleration, this.targetSpeed);
+    } else if (this.currentSpeed > this.targetSpeed) {
+      this.currentSpeed = Math.max(this.currentSpeed - this.acceleration, this.targetSpeed);
+    }
+
+    // Update position
+    this.position -= this.currentSpeed;
+
+    // Reset position for seamless loop
+    if (Math.abs(this.position) >= this.trackWidth) {
+      this.position = 0;
+    }
+
+    // Apply transform
+    if (this.marqueeTrack?.nativeElement) {
+      this.marqueeTrack.nativeElement.style.transform = `translateX(${this.position}px)`;
+    }
+
+    this.animationId = requestAnimationFrame(this.animate);
+  };
+
+  // Called when mouse enters the marquee
+  onMarqueeMouseEnter(): void {
+    this.targetSpeed = 0; // Start slowing down
+  }
+
+  // Called when mouse leaves the marquee
+  onMarqueeMouseLeave(): void {
+    this.targetSpeed = this.maxSpeed; // Start speeding up
+  }
+
+  ngOnDestroy(): void {
+    if (this.animationId !== null) {
+      cancelAnimationFrame(this.animationId);
     }
   }
 }

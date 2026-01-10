@@ -41,8 +41,12 @@
     </div>
 
     <!-- Marquee Container -->
-    <div class="tech__marquee">
-      <div class="tech__marquee-track">
+    <div
+      class="tech__marquee"
+      (mouseenter)="onMarqueeMouseEnter()"
+      (mouseleave)="onMarqueeMouseLeave()"
+    >
+      <div class="tech__marquee-track" #marqueeTrack>
         @for (tech of marqueeItems; track tech.name) {
         <div class="tech__item">
           <i [class]="tech.icon"></i>
