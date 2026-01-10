@@ -3,12 +3,12 @@
 .footer {
   background-color: var(--color-text);
   color: var(--color-bg);
-  padding-block: var(--space-12);
+  padding-block: var(--space-6);
 
   &__container {
     display: flex;
     flex-direction: column;
-    gap: var(--space-8);
+    gap: var(--space-4);
   }
 
   &__content {
@@ -33,6 +33,18 @@
 
   &__logo {
     display: inline-block;
+  }
+
+  &__logo-text {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--color-bg);
+    transition: color var(--transition-fast);
+
+    &:hover {
+      color: var(--color-accent);
+    }
   }
 
   &__logo-img {
@@ -84,7 +96,7 @@
   }
 
   &__bottom {
-    padding-top: var(--space-8);
+    padding-top: var(--space-4);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     text-align: center;
   }
