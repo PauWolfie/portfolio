@@ -42,12 +42,19 @@
     object-fit: cover;
     background-color: var(--color-bg);
     padding: 2px;
+    will-change: transform, opacity;
     transition: transform var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-theme);
 
     &:hover {
-      transform: scale(1.05);
+      transform: scale(1.05) !important;
       box-shadow: 0 0 0 2px var(--color-accent);
     }
+  }
+
+  &__logo-placeholder {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
   }
 
   &__links {

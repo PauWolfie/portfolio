@@ -38,6 +38,33 @@
     margin-bottom: var(--space-6);
   }
 
+  &__name-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+
+    @media (min-width: 768px) {
+      gap: var(--space-6);
+    }
+  }
+
+  &__profile-placeholder {
+    // Invisible placeholder that reserves space for the floating profile image
+    width: 150px;
+    height: 150px;
+    flex-shrink: 0;
+
+    @media (min-width: 768px) {
+      width: 180px;
+      height: 180px;
+    }
+
+    @media (min-width: 1024px) {
+      width: 220px;
+      height: 220px;
+    }
+  }
+
   &__subtitle {
     font-size: var(--font-size-2xl);
     font-weight: 500;

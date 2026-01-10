@@ -8,6 +8,7 @@ import { ProjectsComponent } from './components/projects/projects';
 import { ExperienceComponent } from './components/experience/experience';
 import { ContactComponent } from './components/contact/contact';
 import { FooterComponent } from './components/footer/footer';
+import { FloatingProfileComponent } from './components/floating-profile/floating-profile';
 
 @Component({
   selector: 'app-root',
@@ -19,6 +20,7 @@ import { FooterComponent } from './components/footer/footer';
     ExperienceComponent,
     ContactComponent,
     FooterComponent,
+    FloatingProfileComponent,
   ],
   templateUrl: './app.html',
   styleUrls: ['./app.scss'],
