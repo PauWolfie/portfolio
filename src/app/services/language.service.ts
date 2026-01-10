@@ -259,13 +259,18 @@ const translationsCa: Translations = {
         {
           id: 1,
           degree: 'Màster Oficial en Enginyeria Informàtica',
-          institution: 'Universitat Autònoma de Barcelona',
+          institution: 'Especialització en Gestió de Projectes - Universitat de Lleida',
         },
         {
           id: 2,
           degree: 'Grau en Enginyeria Informàtica',
-          institution: 'Universitat Autònoma de Barcelona',
+          institution: 'Universitat de Lleida',
         },
+        {
+          id: 3,
+          degree: 'Batxillerat Tecnològic',
+          institution: 'Institut Joan Solà',
+        }
       ],
     },
     certifications: {
