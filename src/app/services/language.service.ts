@@ -60,6 +60,8 @@ export interface Translations {
   contact: {
     title: string;
     subtitle: string;
+    aboutMeTitle: string;
+    aboutMeText: string;
     infoTitle: string;
     infoText: string;
     sendEmail: string;
@@ -206,6 +208,8 @@ const translationsCa: Translations = {
   contact: {
     title: 'Contacte',
     subtitle: 'Tens un projecte en ment? Parlem!',
+    aboutMeTitle: 'Sobre mi',
+    aboutMeText: 'Més enllà del codi, sóc un apassionat de l\'esport, la nautura i la tranquilitat. M\'encanta la cuina i experimentar amb noves receptes saludables. També disfruto del creixement personal, els videojocs i passar temps amb amics. Crec fermament en l\'equilibri entre la vida professional i personal, i sempre busco maneres de millorar i créixer tant a nivell tècnic com personal.',
     infoTitle: 'Posem-nos en contacte!',
     infoText: 'Estic disponible per a projectes, col·laboracions o simplement per parlar sobre tecnologia i desenvolupament web!',
     sendEmail: 'Enviar correu',
@@ -352,6 +356,8 @@ const translationsEn: Translations = {
   contact: {
     title: 'Contact',
     subtitle: 'Have a project in mind? Let\'s talk!',
+    aboutMeTitle: 'About Me',
+    aboutMeText: 'Beyond coding, I\'m passionate about fitness and nutrition. I love training, learning about physical performance, and experimenting with healthy recipes. I also enjoy electronic music, video games, and spending time with friends. I firmly believe in work-life balance and I\'m always looking for ways to improve and grow both technically and personally.',
     infoTitle: 'Get in Touch!',
     infoText: 'I am available for projects, collaborations, or simply to chat about technology and web development!',
     sendEmail: 'Send Email',
@@ -497,6 +503,8 @@ const translationsEs: Translations = {
   contact: {
     title: 'Contacto',
     subtitle: '¿Tienes un proyecto en mente? ¡Hablemos!',
+    aboutMeTitle: 'Sobre mí',
+    aboutMeText: 'Más allá del código, soy un apasionado del fitness y la nutrición. Me encanta entrenar, aprender sobre rendimiento físico y experimentar con nuevas recetas saludables. También disfruto de la música electrónica, los videojuegos y pasar tiempo con amigos. Creo firmemente en el equilibrio entre la vida profesional y personal, y siempre busco maneras de mejorar y crecer tanto a nivel técnico como personal.',
     infoTitle: '¡Pongámonos en contacto!',
     infoText: 'Estoy disponible para proyectos, colaboraciones o simplemente para hablar sobre tecnología y desarrollo web.',
     sendEmail: 'Enviar correo',

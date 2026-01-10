@@ -21,35 +21,47 @@
             [opacity]="0.8"
           ></app-particle-background>
         </div>
-        <img
-          src="assets/imgs/profileImg2.png"
-          alt="Foto de perfil"
-          class="contact__image"
-        />
+        <img src="assets/imgs/profileImg2.png" alt="Foto de perfil" class="contact__image" />
       </div>
 
-      <!-- Información de contacto -->
-      <div class="contact__info">
-        <h3 class="contact__info-title">{{ languageService.t().contact.infoTitle }}</h3>
-        <p class="contact__info-text">
-          {{ languageService.t().contact.infoText }}
-        </p>
+      <!-- Info wrapper: About me + Contact -->
+      <div class="contact__info-wrapper">
+        <!-- Sobre mi -->
+        <div class="contact__about">
+          <h3 class="contact__about-title">{{ languageService.t().contact.aboutMeTitle }}</h3>
+          <p class="contact__about-text">
+            {{ languageService.t().contact.aboutMeText }}
+          </p>
+        </div>
 
-        <div class="contact__buttons">
-          <a
-            href="mailto:info@pauwolfie.dev?subject=Contacte"
-            class="contact__button contact__button--email"
-          >
-            <svg class="contact__button-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-              />
-            </svg>
-            {{ languageService.t().contact.sendEmail }}
-          </a>
+        <!-- Información de contacto -->
+        <div class="contact__info">
+          <h3 class="contact__info-title">{{ languageService.t().contact.infoTitle }}</h3>
+          <p class="contact__info-text">
+            {{ languageService.t().contact.infoText }}
+          </p>
+
+          <div class="contact__buttons">
+            <a
+              href="mailto:info@pauwolfie.dev?subject=Contacte"
+              class="contact__button contact__button--email"
+            >
+              <svg
+                class="contact__button-icon"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                />
+              </svg>
+              {{ languageService.t().contact.sendEmail }}
+            </a>
+          </div>
         </div>
       </div>
     </div>
