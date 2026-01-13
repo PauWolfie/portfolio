@@ -21,6 +21,12 @@
       >
         <!-- ... device display area ... -->
         <div class="projects__devices">
+          @if (project.singleImage) {
+          <!-- Single Image Display -->
+          <div class="projects__single-image">
+            <img [src]="project.singleImage" [alt]="project.title" loading="lazy" />
+          </div>
+          } @else {
           <!-- Mobile Carousel -->
           <div class="projects__carousel">
             <div class="projects__carousel-track">
@@ -107,6 +113,7 @@
               </div>
             </div>
           </div>
+          }
 
           <!-- Floating Particles Effect -->
           <div class="projects__particles">
